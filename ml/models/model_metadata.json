@@ -1,0 +1,28 @@
+{
+  "best_model": "logistic_regression",
+  "categorical": [
+    "gender",
+    "contract_type",
+    "payment_method",
+    "internet_service",
+    "multiple_lines",
+    "online_security",
+    "online_backup",
+    "device_protection",
+    "tech_support",
+    "streaming_tv",
+    "streaming_movies"
+  ],
+  "numeric": [
+    "senior_citizen",
+    "partner",
+    "dependents",
+    "paperless_billing",
+    "phone_service",
+    "monthly_charges",
+    "tenure_months",
+    "ticket_count",
+    "avg_satisfaction"
+  ],
+  "model_version": "v1.0"
+}

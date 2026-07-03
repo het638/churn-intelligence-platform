@@ -1,0 +1,17 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Raw + intermediate data are regeneratable via etl/01_generate_data.py — don't bloat the repo.
+data/raw/*.csv
+data/processed/features.csv
+
+# NOTE: data/processed/features_scored.csv and ml/models/*.joblib ARE committed on purpose —
+# the deployed Streamlit app has no access to the local MySQL instance, so it reads this
+# snapshot + the trained model artifacts directly from the repo.
+
+.streamlit/secrets.toml
+*.Rhistory
+.ipynb_checkpoints/

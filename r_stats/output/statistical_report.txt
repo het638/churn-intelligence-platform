@@ -1,0 +1,24 @@
+=== Customer Churn & Revenue Intelligence Platform === 
+=== Statistical Analysis Report (R) ===
+ 
+--- 1. Logistic Regression: churned ~ drivers ---
+ 
+ Call: glm(formula = churned ~ contract_type + payment_method + internet_service +      tech_support + monthly_charges + tenure_months + senior_citizen +      ticket_count, family = binomial(link = "logit"), data = df)  Coefficients: (1 not defined because of singularities)                                        Estimate Std. Error z value Pr(>|z|)     (Intercept)                           -1.438942   0.263270  -5.466 4.61e-08 *** contract_typeOne year                 -1.617095   0.088243 -18.325  < 2e-16 *** contract_typeTwo year                 -3.193483   0.158349 -20.167  < 2e-16 *** payment_methodCredit card (automatic) -0.082438   0.101201  -0.815 0.415302     payment_methodElectronic check         0.423431   0.090609   4.673 2.97e-06 *** payment_methodMailed check            -0.030333   0.099267  -0.306 0.759931     internet_serviceFiber optic            0.347537   0.102218   3.400 0.000674 *** internet_serviceNo                    -0.636899   0.183256  -3.475 0.000510 *** tech_supportNo internet service              NA         NA      NA       NA     tech_supportYes                       -0.518367   0.083134  -6.235 4.51e-10 *** monthly_charges                        0.026698   0.004199   6.359 2.04e-10 *** tenure_months                         -0.061248   0.003248 -18.858  < 2e-16 *** senior_citizen                         0.380984   0.087272   4.365 1.27e-05 *** ticket_count                           0.922313   0.046222  19.954  < 2e-16 *** --- Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1  (Dispersion parameter for binomial family taken to be 1)      Null deviance: 8455.9  on 7042  degrees of freedom Residual deviance: 5716.8  on 7030  degrees of freedom AIC: 5742.8  Number of Fisher Scoring iterations: 6  
+
+-- Odds Ratios (exp(coef)) -- 
+                                      OddsRatio 2.5 % 97.5 % (Intercept)                               0.237 0.142  0.397 contract_typeOne year                     0.198 0.167  0.236 contract_typeTwo year                     0.041 0.030  0.056 payment_methodCredit card (automatic)     0.921 0.755  1.123 payment_methodElectronic check            1.527 1.279  1.824 payment_methodMailed check                0.970 0.799  1.178 internet_serviceFiber optic               1.416 1.159  1.730 internet_serviceNo                        0.529 0.369  0.758 tech_supportNo internet service              NA    NA     NA tech_supportYes                           0.595 0.506  0.701 monthly_charges                           1.027 1.019  1.036 tenure_months                             0.941 0.935  0.947 senior_citizen                            1.464 1.234  1.737 ticket_count                              2.515 2.297  2.754 
+
+McFadden's pseudo R2: 0.3239 
+
+--- 2. Chi-square tests of independence ---
+ 
+churned x contract_type: X2 = 1092.81, df = 2, p-value = 4.99161e-238 
+churned x internet_service: X2 = 493.07, df = 2, p-value = 8.52018e-108 
+churned x payment_method: X2 = 32.98, df = 3, p-value = 3.25239e-07 
+churned x tech_support: X2 = 375.47, df = 2, p-value = 2.93067e-82 
+
+--- 3. Welch two-sample t-tests (churned vs retained) ---
+ 
+monthly_charges: mean(retained)=55.43, mean(churned)=68.49, t=-25.64, df=4908.8, p-value=3.2369e-136 
+tenure_months: mean(retained)=22.77, mean(churned)=14.79, t=26.10, df=5155.6, p-value=3.47109e-141 
+ticket_count: mean(retained)=0.42, mean(churned)=0.77, t=-15.28, df=2831.5, p-value=1.02253e-50 
