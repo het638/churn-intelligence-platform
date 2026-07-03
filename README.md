@@ -2,10 +2,10 @@
 
 An end-to-end analytics + ML product: synthetic Telco-style customer data →
 MySQL → SQL analytics views → scikit-learn churn/CLV/segmentation models →
-SHAP explainability → R statistical validation → Power BI dashboard → a
-deployed Streamlit app. Built to demonstrate the full pipeline a data
-analytics Werkstudent role expects: Python, SQL/MySQL, ML, R/statistics,
-Power BI (DAX), Streamlit, and Plotly, end to end.
+SHAP explainability → R statistical validation → a deployed Streamlit app.
+Built to demonstrate the full pipeline a data analytics Werkstudent role
+expects: Python, SQL/MySQL, ML, R/statistics, Streamlit, and Plotly, end
+to end.
 
 ## Why this dataset
 
@@ -46,10 +46,6 @@ ml/            Machine learning layer
 r_stats/       Statistical validation (base R only, no CRAN deps needed)
   churn_statistical_analysis.R  Logistic regression w/ odds ratios,
                                  chi-square tests, Welch t-tests
-
-powerbi/       Power BI dashboard (build-it-yourself GUI steps)
-  DAX_measures.txt               20+ DAX measures ready to paste in
-  README_dashboard_guide.md      step-by-step 4-page dashboard build guide
 
 streamlit_app/ Deployed interactive app
   app.py                     Overview KPIs, live churn scoring + SHAP
@@ -116,13 +112,6 @@ DB_PASSWORD=yourpassword
 DB_NAME=churn_platform
 ```
 
-## Power BI dashboard
-
-Power BI Desktop is GUI-only, so this part is a guided manual build — see
-[`powerbi/README_dashboard_guide.md`](powerbi/README_dashboard_guide.md) and
-[`powerbi/DAX_measures.txt`](powerbi/DAX_measures.txt). Budget ~2-3 hours.
-Export screenshots into `powerbi/screenshots/` once built, and link them here.
-
 ## Deploying the live Streamlit app
 
 See [`docs/deployment_guide.md`](docs/deployment_guide.md) for the full
@@ -131,4 +120,4 @@ git + GitHub + Streamlit Community Cloud walkthrough.
 ## Tech stack
 
 Python (pandas, scikit-learn, XGBoost, SHAP, SQLAlchemy) · MySQL · SQL ·
-R (base stats) · Power BI (DAX) · Streamlit · Plotly
+R (base stats) · Streamlit · Plotly
